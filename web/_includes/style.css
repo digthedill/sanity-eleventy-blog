@@ -1,26 +1,42 @@
 /* Tufte-ish CSS styles */
-html {
-    font-size: 15px;
+html,
+body {
+  font-size: 15px;
+  height: 100%;
 }
 
 body {
-    width: 87.5%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 12.5%;
-    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    background-color: #fffff8;
-    color: #111;
-    max-width: 1400px;
-    counter-reset: sidenote-counter;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-left: 12.5%; */
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+
+  max-width: 1100px;
+  counter-reset: sidenote-counter;
+  background: url(https://daily.jstor.org/wp-content/uploads/2016/05/red_jello_stock_1050x700.jpg);
+
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+  background-color: #f4eeed;
+  color: #111;
+  padding: 0 1rem;
 }
 
 h1 {
-    font-weight: 400;
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
-    font-size: 3.2rem;
-    line-height: 1;
+  font-weight: 400;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  line-height: 1;
 }
 
 h1.home {
@@ -28,112 +44,178 @@ h1.home {
 }
 
 h2 {
-    font-style: italic;
-    font-weight: 400;
-    margin-top: 2.1rem;
-    margin-bottom: 1.4rem;
-    font-size: 2.2rem;
-    line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 2.1rem;
+  margin-bottom: 1.4rem;
+  font-size: 2.2rem;
+  line-height: 1;
 }
 
 h3 {
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.7rem;
-    margin-top: 2rem;
-    margin-bottom: 1.4rem;
-    line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-bottom: 1.4rem;
+  line-height: 1;
 }
 
 article {
-    padding: 5rem 0rem;
+  padding: 2rem 0rem;
 }
 
 section {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 p,
 ol,
 ul {
-    font-size: 1.4rem;
-    line-height: 2rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
 }
 
 p {
-    margin-top: 1.4rem;
-    margin-bottom: 1.4rem;
-    padding-right: 0;
-    vertical-align: baseline;
-    max-width: 700px;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  padding-right: 0;
+  vertical-align: baseline;
+  max-width: 700px;
 }
 
 blockquote {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 blockquote p {
-    width: 55%;
-    margin-right: 40px;
+  width: 55%;
+  margin-right: 40px;
 }
 
 blockquote footer {
-    width: 55%;
-    font-size: 1.1rem;
-    text-align: right;
+  width: 55%;
+  font-size: 1.1rem;
+  text-align: right;
 }
 
 section > p,
 section > footer,
 section > table {
-    width: 55%;
+  width: 55%;
 }
 
 /* 50 + 5 == 55, to be the same width as paragraph */
 section > ol,
 section > ul {
-    width: 50%;
-    -webkit-padding-start: 5%;
+  width: 50%;
+  -webkit-padding-start: 5%;
 }
 
 li:not(:first-child) {
-    margin-top: 0.25rem;
+  margin-top: 0.25rem;
+}
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 figure {
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    max-width: 55%;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    margin: 0 0 3em 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  max-width: 55%;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  margin: 0 0 3em 0;
 }
 
 figcaption {
-    float: right;
-    clear: right;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    vertical-align: baseline;
-    position: relative;
-    max-width: 40%;
+  float: right;
+  clear: right;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  vertical-align: baseline;
+  position: relative;
+  max-width: 40%;
 }
 
 figure.fullwidth figcaption {
-    margin-right: 24%;
+  margin-right: 24%;
 }
 
 /* Links: replicate underline that clears descenders */
+
 a:link,
 a:visited {
-    color: inherit;
+  color: inherit;
 }
 a:hover {
   text-decoration: none;
+}
+
+header.nav-bar {
+  background: #222;
+  color: #f4f4f4;
+  display: flex;
+  justify-items: stretch;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.nav-item {
+  margin: 0 2rem;
+}
+header ul {
+  list-style: none;
+}
+header a {
+  text-decoration: none;
+}
+header a:hover {
+  color: #222222;
+  background: #f4f4f4;
+}
+
+div.eachPost {
+  display: flex;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 640px) {
+  div.eachPost {
+    flex-flow: column;
+  }
+  li.postlist-item {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+.postlist-item {
+  margin-left: 2rem;
+}
+
+div.excerpt {
+  color: #777;
+}
+
+footer.foot {
+  background: #222;
+  color: #f4f4f4;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  padding: 1rem;
+  height: fill;
+  flex-shrink: 0;
 }
